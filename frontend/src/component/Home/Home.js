@@ -4,6 +4,8 @@ import * as THREE from 'three'
 import moonImage from '../../Images/moon.jpg'
 import venusImage from '../../Images/venus.jpg'
 import spaceImage from '../../Images/space.jpg'
+import {Typography} from '@mui/material'
+import TimeLine from '../Timeline/TimeLine'
 
 const Home = () => {
 
@@ -97,6 +99,11 @@ const Home = () => {
   return (
     <div className='home'>
       <canvas className='homeCanvas'></canvas>
+
+      <div className="homeContainer">
+        <Typography variant='h3'>Timeline</Typography>
+        <TimeLine timelines={[1,2,3,4]} />
+      </div>
     </div>
   )
 }
