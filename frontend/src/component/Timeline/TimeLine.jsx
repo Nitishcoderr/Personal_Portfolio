@@ -20,10 +20,12 @@ const TimeLine = ({timelines=[]}) => {
                 </TimelineOppositeContent>
                 <TimelineSeparator>
                     <TimelineConnector/>
-                    <TimelineDot></TimelineDot>
+                    <TimelineDot>
+                      <Event/>
+                    </TimelineDot>
                     <TimelineConnector/>
                 </TimelineSeparator>
-                <TimelineContent>
+                <TimelineContent sx={{py:'12px',px:2}} >
                     <Typography variant='h6'>Title</Typography>
                     <Typography>Description</Typography>
                 </TimelineContent>
