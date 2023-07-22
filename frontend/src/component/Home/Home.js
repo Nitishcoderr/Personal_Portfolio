@@ -4,8 +4,22 @@ import * as THREE from 'three'
 import moonImage from '../../Images/moon.jpg'
 import venusImage from '../../Images/venus.jpg'
 import spaceImage from '../../Images/space.jpg'
-import {Typography} from '@mui/material'
+import { Typography } from '@mui/material'
 import TimeLine from '../Timeline/TimeLine'
+import {
+  SiReact,
+  SiJavascript,
+  SiMongodb,
+  SiSass,
+  SiNodedotjs,
+  SiExpress,
+  SiCss3,
+  SiHtml5,
+  SiBootstrap,
+  SiTailwindcss
+  
+} from "react-icons/si";
+import YoutubeCard from '../YoutubeCard/YoutubeCard'
 
 const Home = () => {
 
@@ -50,7 +64,7 @@ const Home = () => {
     scene.add(pointLight)
     scene.add(venus)
     scene.add(pointLight2)
-    scene.background =spaceTexture
+    scene.background = spaceTexture
 
     const constSpeed = 0.01
     window.addEventListener("mousemove", (e) => {
@@ -102,7 +116,7 @@ const Home = () => {
 
       <div className="homeContainer">
         <Typography variant='h3'>Timeline</Typography>
-        <TimeLine timelines={[1,2,3,4]} />
+        <TimeLine timelines={[1, 2, 3, 4]} />
       </div>
       <div className="homeSkills">
         <Typography variant='h3'>Skills</Typography>
@@ -125,6 +139,25 @@ const Home = () => {
           <div className="homeCubeSkillsFaces homeCubeSkillsFace6">
             <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/JavaScript-logo.png/100px-JavaScript-logo.png" alt="Face6" />
           </div>
+        </div>
+        <div className="cubeShadow"></div>
+        <div className="homeskillsBox">
+          <SiHtml5 />
+          <SiCss3 />
+          <SiTailwindcss />
+          <SiBootstrap />
+          <SiSass />
+          <SiJavascript />
+          <SiNodedotjs />
+          <SiExpress />
+          <SiMongodb />
+          <SiReact />
+        </div>
+      </div>
+      <div className="homeYoutube">
+        <Typography variant='h3'>YOUTUBE VIDEOS</Typography>
+        <div className="homeYoutubeWrapper">
+          <YoutubeCard image="https://www.patterns.dev/img/reactjs/react-logo@3x.svg" title='sampel' />
         </div>
       </div>
     </div>
