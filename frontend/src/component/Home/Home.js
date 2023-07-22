@@ -104,6 +104,29 @@ const Home = () => {
         <Typography variant='h3'>Timeline</Typography>
         <TimeLine timelines={[1,2,3,4]} />
       </div>
+      <div className="homeSkills">
+        <Typography variant='h3'>Skills</Typography>
+        <div className="homeCubeSkills">
+          <div className="homeCubeSkillsFaces homeCubeSkillsFace1">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/JavaScript-logo.png/100px-JavaScript-logo.png" alt="Face1" />
+          </div>
+          <div className="homeCubeSkillsFaces homeCubeSkillsFace2">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/JavaScript-logo.png/100px-JavaScript-logo.png" alt="Face2" />
+          </div>
+          <div className="homeCubeSkillsFaces homeCubeSkillsFace3">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/JavaScript-logo.png/100px-JavaScript-logo.png" alt="Face3" />
+          </div>
+          <div className="homeCubeSkillsFaces homeCubeSkillsFace4">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/JavaScript-logo.png/100px-JavaScript-logo.png" alt="Face4" />
+          </div>
+          <div className="homeCubeSkillsFaces homeCubeSkillsFace5">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/JavaScript-logo.png/100px-JavaScript-logo.png" alt="Face5" />
+          </div>
+          <div className="homeCubeSkillsFaces homeCubeSkillsFace6">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/JavaScript-logo.png/100px-JavaScript-logo.png" alt="Face6" />
+          </div>
+        </div>
+      </div>
     </div>
   )
 }
