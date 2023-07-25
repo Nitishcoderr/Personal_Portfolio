@@ -26,3 +26,12 @@ This is my personal portfolio website built using the MERN (MongoDB, Express, Re
 * @mui/icons-material
 * react-icons
 * React-redux
+
+### Backend Part :
+* express 
+* mongoose 
+* dotenv 
+* cloudinary 
+* cookie-parser 
+* nodemailer 
+* jsonwebtoken
