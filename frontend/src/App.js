@@ -6,6 +6,7 @@ import Footer from './component/Footer/Footer';
 import About from './component/About/About';
 import Project from './component/Projects/Project';
 import Contact from './component/Contact/Contact';
+import Login from './component/Login/Login';
 function App() {
   return (
     <Router>
@@ -15,6 +16,7 @@ function App() {
         <Route exact path='/about' element={<About/>} />
         <Route exact path='/projects' element={<Project/>} />
         <Route exact path='/contact' element={<Contact/>} />
+        <Route exact path='/account' element={<Login/>} />
       </Routes>
       <Footer/>
     </Router>
