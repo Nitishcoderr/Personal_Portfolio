@@ -11,7 +11,7 @@ const Login = () => {
 
     const dispatch = useDispatch()
     const alert = useAlert()
-    const {loading,message,error} = useSelector((state)=> state.login)
+    const {message,error} = useSelector((state)=> state.login)
 
     const submitHandler=(e)=>{
         e.preventDefault()

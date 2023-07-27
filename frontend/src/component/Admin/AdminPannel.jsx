@@ -225,7 +225,7 @@ const AdminPannel = () => {
           <Link to="/admin/youtube">
             YOUTUBE <FaYoutube />
           </Link>
-          <Link to="/admin/youtube">
+          <Link to="/admin/project">
             PROJECTS <AiOutlineProject />
           </Link>
           <Button

@@ -17,7 +17,7 @@ export const login = async (req, res) => {
         }
         const token = jwt.sign({ _id: user._id }, process.env.JWT_SECRET);
         res.status(200).cookie("token", token, {
-            expires: new Date(Date.now() + 10 * 60 * 1000),
+            expires: new Date(Date.now() + 20 * 60 * 1000),
             httpOnly: true,
         }).json({
             success: true,
@@ -325,7 +325,7 @@ export const deleteTimeline = async (req, res) => {
         const {id} = req.params;
         const user = await User.findById(req.user._id)
 
-        user.timeline = user.timeline.filter((item)=>item._id !== id)
+        user.timeline = user.timeline.filter((item)=>item._id != id)
         
         await user.save()
 
@@ -347,11 +347,11 @@ export const deleteYoutube = async (req, res) => {
         const {id} = req.params;
         const user = await User.findById(req.user._id)
 
-        const video = user.youtube.find((video)=>video._id !== id)
+        const video = user.youtube.find((video)=>video._id == id)
 
         await cloudinary.v2.uploader.destroy(video.image.public_id)
 
-        user.youtube = user.youtube.filter((video)=>video._id !== id)
+        user.youtube = user.youtube.filter((video)=>video._id != id)
         
         await user.save()
 
@@ -373,11 +373,11 @@ export const deleteProject = async (req, res) => {
         const {id} = req.params;
         const user = await User.findById(req.user._id)
 
-        const project = user.projects.find((item)=>item._id !== id)
+        const project = user.projects.find((item)=>item._id == id)
 
         await cloudinary.v2.uploader.destroy(project.image.public_id)
 
-        user.projects = user.projects.filter((item)=>video._id !== id)
+        user.projects = user.projects.filter((item)=>video._id != id)
         
         await user.save()
 

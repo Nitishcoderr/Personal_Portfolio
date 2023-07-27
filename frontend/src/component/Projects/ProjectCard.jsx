@@ -1,6 +1,8 @@
 import { Delete } from '@mui/icons-material'
 import { Button, Typography } from '@mui/material'
 import React from 'react'
+import { deleteProject, getUser } from '../../action/user'
+import { useDispatch } from 'react-redux'
 
 const ProjectCard = ({
     url,
@@ -9,7 +11,14 @@ const ProjectCard = ({
     description,
     technologies,
     isAdmin = false,
+    id
 }) => {
+    const dispatch = useDispatch()
+    
+    const deleteHandler = async (id)=>{
+        await dispatch(deleteProject(id))
+        dispatch(getUser())
+     }
   return (
     <>
      <a href={url} className='projectCard' target='blank' >
@@ -25,7 +34,7 @@ const ProjectCard = ({
         </div>
         </a> 
         {isAdmin && (
-            <Button style={{color:"rgba(40,40,40,0.7)"}}>
+            <Button style={{color:"rgba(40,40,40,0.7)"}} onClick={()=>deleteHandler(id)} >
                 <Delete/>
             </Button>
         )
