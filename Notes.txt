@@ -9,3 +9,4 @@
 * Connected server by using express
 * Connected database using MongoDB
 * Created Modal for User
+* Created Route for User
