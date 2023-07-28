@@ -29,7 +29,7 @@ const ProjectCard = ({
         <div>
         <Typography variant='h4'>About Project</Typography>
         <Typography>{description}</Typography>
-        <Typography variant='h6' >Tech Stack:  {technologies}</Typography>
+        <Typography variant='h6' >Tech Stack:{technologies}</Typography>
 
         </div>
         </a> 

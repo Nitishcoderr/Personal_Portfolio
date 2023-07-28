@@ -9,11 +9,14 @@ import ProjectCard from '../Projects/ProjectCard';
 
 
 const AdminProjects = () => {
+  const dispatch = useDispatch()
+  const alert = useAlert()
+  
     const {message,error,loading} = useSelector((state)=>state.update)
     const {message:loginMessage} = useSelector((state)=>state.login)
+
     const {user} = useSelector((state)=>state.user)
-    const dispatch = useDispatch()
-    const alert = useAlert()
+    
 
     const [title,setTitle] = useState("")
     const [url,setUrl] = useState("")

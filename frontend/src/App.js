@@ -19,7 +19,7 @@ function App() {
 const dispatch = useDispatch()
 
 const {isAuthenticated} = useSelector((state)=>state.login)
-const {loading} = useSelector((state)=>state.user)
+const {loading,user} = useSelector((state)=>state.user)
 
 
   useEffect(() => {
@@ -34,9 +34,9 @@ const {loading} = useSelector((state)=>state.user)
         <>
         <Header/>
         <Routes>
-          <Route exact path='/' element={<Home/>} />
-          <Route exact path='/about' element={<About/>} />
-          <Route exact path='/projects' element={<Project/>} />
+          <Route exact path='/' element={<Home youtubes={user.youtube} timelines={user.timeline} skills={user.skills} />} />
+          <Route exact path='/about' element={<About about={user.about} />} />
+          <Route exact path='/projects' element={<Project projects={user.projects} />} />
           <Route exact path='/contact' element={<Contact/>} />
           <Route exact path='/account' element={isAuthenticated ? <AdminPannel/> : <Login/>} />
           <Route exact path='/admin/timeline' element={isAuthenticated ? <Timeline/> : <Login/>} />

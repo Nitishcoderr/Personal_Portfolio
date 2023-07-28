@@ -9,6 +9,8 @@ import { FaTrash } from 'react-icons/fa'
 
 const Timeline = () => {
     const {message,error,loading} = useSelector((state)=>state.update)
+    const {message:loginMessage} = useSelector((state)=>state.login)
+
     const {user} = useSelector((state)=>state.user)
     const dispatch = useDispatch()
     const alert = useAlert()
@@ -35,8 +37,11 @@ const Timeline = () => {
     }if(message){
         alert.success(message)
         dispatch({type:"CLEAR_MESSAGE"})
-    }
-  }, [alert,error,message,dispatch])
+    }if(loginMessage){
+      alert.success(loginMessage)
+      dispatch({type:"CLEAR_MESSAGE"})
+  }
+  }, [alert,error,message,dispatch,loginMessage])
   
 
   return (

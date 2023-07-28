@@ -14,8 +14,8 @@ const AdminPannel = () => {
     const dispatch = useDispatch()
     const alert = useAlert()
 
-    const {message:loginMessage} = useSelector((state)=>state.login)
     const {message,error,loading} = useSelector((state)=>state.update)
+    const {message:loginMessage} = useSelector((state)=>state.login)
     
 
   const [name, setName] = useState('');
@@ -78,13 +78,15 @@ const AdminPannel = () => {
         dispatch({type:"CLEAR_ERRORS"})
     }
     if(loginMessage){
-      alert.success(message)
-      dispatch({type:"CLEAR_MESSAGE"})
-  }if(message){
+        alert.success(loginMessage)
+        dispatch({type:"CLEAR_MESSAGE"})
+    }
+    if(message){
         alert.success(message)
         dispatch({type:"CLEAR_MESSAGE"})
     }
-  }, [alert,error,message,dispatch.loginMessage])
+  }, [alert,error,message,dispatch,loginMessage])
+
   
 
   return (
@@ -191,6 +193,13 @@ const AdminPannel = () => {
               <input
                 type="text"
                 placeholder="Title"
+                value={about.title}
+                onChange={(e) => setAbout({ ...about,title: e.target.value })}
+                className="adminPanelInputs"
+              />
+              <input
+                type="text"
+                placeholder="Subtitle"
                 value={about.subtitle}
                 onChange={(e) => setAbout({ ...about, subtitle: e.target.value })}
                 className="adminPanelInputs"

@@ -296,7 +296,8 @@ export const addProject = async (req, res) => {
         })
 
         user.projects.unshift({
-            url,title,
+            url,
+            title,
             description,
             techStack,
             image:{
@@ -377,7 +378,7 @@ export const deleteProject = async (req, res) => {
 
         await cloudinary.v2.uploader.destroy(project.image.public_id)
 
-        user.projects = user.projects.filter((item)=>video._id != id)
+        user.projects = user.projects.filter((item)=>item._id != id)
         
         await user.save()
 

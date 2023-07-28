@@ -58,12 +58,12 @@ const userSchema = new mongoose.Schema({
         {
             url: String,
             title: String,
+            description: String,
+            techStack: String,
             image: {
                 public_id: String,
                 url: String,
             },
-            description: String,
-            techStack: String,
         },
     ],
     about: {
